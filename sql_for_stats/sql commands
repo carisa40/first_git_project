@@ -3,7 +3,7 @@ SQL Commands List
 Note: some of the examples have no output because they deal with deleting or creating whole tables.
 
 
-#AND|OR
+## AND|OR
 
 AND combines two or more conditions for a single query. All of the conditions used with this operator must be met in order to show the results.
 
