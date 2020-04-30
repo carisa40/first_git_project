@@ -1,0 +1,3 @@
+select count(*) month_of_year from store_sales
+
+shows number of column in month of year
