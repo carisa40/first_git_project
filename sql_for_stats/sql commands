@@ -353,3 +353,159 @@ WHERE doesn't work with the aggregate functions, for that purpose, use HAVING in
 Example
 SELECT * FROM Developers
 WHERE Country='France';
+
+
+
+
+
+
+#######################   W3SCHOOLS    #########################
+
+select distinct Country from Customers; 
+### select all different values from country column
+
+select * from Customers
+where City = 'Berlin';
+
+select * from Customers
+where not City = 'Berlin';
+
+select * from Customers
+where City = 'Berlin'
+or City = 'London';
+
+select * from Customers
+order by City;           ##sort in alphabetical order
+
+select * from Customers
+order by City desc;          ## sorts city in reverse alphabetical order
+
+select * from Customers
+order by Country, City;    ##orders first by country then by city
+
+
+insert into Customers (
+	CustomermName, 
+	Address,
+	City,
+	PostalCode,
+	Country)               ## inserts a new record in the Customers table
+	values (
+	'Hekkan Burger',
+	'Gateveien 15',
+	'Sandnes',
+	'4306',
+	'Norway');
+
+
+create table Persons (
+	PersonID int,
+	LastName varchar(255),
+	FirstName varchar(255),
+	Address varchar(255),
+	City varchar(255)
+);           ############ creates a new table called Persons    ########
+
+
+select * from Customers
+where PostalCode is null;      ###selects records where PostalCode is empty
+
+
+select * from Customers     ###selects records where PostalCode is not empty
+where PostalCode is not null;  
+
+update Customers
+set City = 'Oslo'    ### updates the city column of all records in the table
+
+update Customers
+set City = 'Oslo'    ### updates to Oslo only where country is Norway
+where Country = 'Norway' 
+
+delete from Customers
+where Country = 'Norway';   ### deletes customerms whose Country is Norway
+
+delete from Customers;    #### deletes all records from Customers table
+
+
+select * from Customers
+where City like 'a%b';  
+##### selects all records where the value of the city column starts with the letter 'a' and ends with the letter 'b'  #####
+
+select * from Customers
+where City not like 'a%';  ### where City column doesn't start with 'a'
+
+select * from Customers
+where City like '_a';      ##### where second letter starts with 'a'
+
+select * from Customers
+where City like '[acs]%'      ### where first letter is 'a' or 'c' or 's'
+
+select * from Customers
+where City like '[a-f]%';    
+#### where first letter of city starts with anything from 'a' to 'f'  ####
+
+
+select * from Customers 
+where City like '[^acf]%';  ## where first letter is not 'a' or 'c' or 'f'
+
+select * from Customers
+where Country in ('Norway', 'France'); 
+###### where country is either Norway or France  #####
+
+###opposite is : where Country not in ('Norway','France');
+
+##### alias : as ###
+
+
+select *
+from Orders
+left join Customers
+on Orders.CustomerID = Customers.CustomerID;
+########   joins the two tables using the CustomerID field as the relationship between the two tables     ############
+
+
+select *
+from Orders
+inner join Customers
+on Orders.CustomerID= Customers.CustomerID;
+######## selects all records from the two tables where there is a match in both tables   #######
+
+
+select * 
+from Orders
+right join Customers
+on Orders.CustomerID=Customers.CustomerID
+######### selects all records from Customers table plus all the matches in the Orders table             ###############
+
+
+
+select count (CustomerID),
+Country
+from Customers
+group by Country;   ### number of customers in each country  ####
+
+
+select count(CustomerID),
+Country
+from Customers
+group by Country
+order by count(CustomerID) desc;   
+######## lists the number of customers in each country, ordered by the country with the most customers first      ######
+
+
+create database testDB;  ###### creates testDB database  ######
+
+drop database testDB;      ####### deletes the testDB database   ########
+
+drop table Persons;      #### deletes a table called persons    #######
+
+truncate table Persons;  ##### deletes all data inside the Persons table ###
+
+alter table Persons
+add Birthday date;    #### adds column caled Birthday of type date  ######
+
+alter table Persons
+drop column Birthday; 
+####  deletes the Birthday column from the Persons table    ########
+
+
