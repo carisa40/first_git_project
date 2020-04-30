@@ -1,4 +1,3 @@
-
 SQL Commands List
 Note: some of the examples have no output because they deal with deleting or creating whole tables.
 
@@ -16,7 +15,7 @@ Example
 SELECT * FROM Developers
 WHERE City='London' OR City='Paris';
 
-# ALTER TABLE
+## ALTER TABLE
 ALTER TABLE allows you to add or remove columns from a table.
 
 Example
@@ -280,12 +279,16 @@ SELECT used with an asterisk * operator selects all data records from a specifie
 
 Example
 SELECT * FROM Customers;
-SELECT DISTINCT
+
+
+# SELECT DISTINCT
 SELECT DISTINCT returns only the data that is distinct, and does not include duplicate entries.
 
 Example
 SELECT DISTINCT City FROM Developers;
-SELECT INTO
+
+
+# SELECT INTO
 SELECT INTO statement selects specified data in a table and copies it to another table.
 
 Example
@@ -294,7 +297,9 @@ FROM Customers;
 Example
 SELECT Name, Contact INTO CustomerBackup2017
 FROM Customers;
-SELECT TOP
+
+
+# SELECT TOP
 SELECT TOP specifies the maximum number or percentage of data entries to return in a result-set.
 
 Example
@@ -302,12 +307,16 @@ SELECT * FROM Customers
 LIMIT 3;
 Example
 SELECT TOP 50 PERCENT * FROM Customers;
-TRUNCATE TABLE
+
+
+# TRUNCATE TABLE
 TRUNCATE TABLE removes data entries from a table in a database, but keeps the table, its datatype and column parameters.
 
 Example
 TRUNCATE TABLE tbl_name
-UNION
+
+
+# UNION
 You can combine multiple result-sets using the UNION operator with two or more SELECT statements.
 
 Example
@@ -315,7 +324,9 @@ SELECT City FROM Developers
 UNION
 SELECT City FROM Customers
 ORDER BY City;
-UNION ALL
+
+
+# UNION ALL
 UNION ALL is used to combine two or more result-sets and keep all the duplicate data entries.
 
 Example
@@ -323,14 +334,18 @@ SELECT City FROM Developers
 UNION ALL
 SELECT City FROM Customers
 ORDER BY City;
-UPDATE
+
+
+# UPDATE
 UPDATE statement is used with the WHERE clause to update data in the table.
 
 Example
 UPDATE Developers
 SET City = 'Berlin', Country= 'Germany'
 WHERE Name = 'Antonio Indigo';
-WHERE
+
+
+# WHERE 
 WHERE clause specifies your query to filter only the results that satisfy your set condition.
 
 WHERE doesn't work with the aggregate functions, for that purpose, use HAVING instead.
